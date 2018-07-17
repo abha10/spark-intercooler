@@ -18,10 +18,10 @@ node('master') {
     }
     stage('Build') {
         withMaven(maven: 'Maven 3') {
-        dir('app') {
+        //dir('app') {
             sh 'mvn clean package'
             dockerCmd 'build --tag automatingguy/sparktodo:SNAPSHOT .'
-         }
+         //}
         }
     }
   }
